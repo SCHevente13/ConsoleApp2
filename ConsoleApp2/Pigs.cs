@@ -12,12 +12,12 @@ namespace ConsoleApp2
         public string Gender { get; set; }
         public double Weight { get; set; }
         public int Age { get; set; }
-        public Pigs(string name, string gender, double weight, int age)
+        public Pigs(string[] data)
         {
-            Name = name;
-            Gender = gender;
-            Weight = weight;
-            Age = age;
+            Name = data[0];
+            Gender = data[1];
+            Weight = double.Parse(data[2]);
+            Age = int.Parse(data[3]);
         }
         public override string ToString()
         {

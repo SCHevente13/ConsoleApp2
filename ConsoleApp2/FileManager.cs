@@ -10,16 +10,12 @@ namespace ConsoleApp2
     {
         public static List<Pigs> ReadFile(string fileName)
         {
-            List<Pigs> lines = new List<Pigs>();
+            List<Pigs> lines = new();
             try
             {
                 foreach (string line in File.ReadAllLines(fileName, Encoding.UTF8).Skip(1))
                 {
-                    string[] temp = line.Split(';');
-                    if (temp.Length == 3)
-                    {
-                        lines.Add(new Pigs(temp[0], temp[1], double.Parse(temp[2]), int.Parse(temp[3])));
-                    }
+                    lines.Add(new Pigs(line.Replace('.', ',').Split(';')));
                 }
             }
             catch (Exception e)

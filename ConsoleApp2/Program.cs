@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("github");
+            List<Pigs> list = FileManager.ReadFile("disznok.csv");
         }
     }
 }
